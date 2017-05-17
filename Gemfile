@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'clearance'
 gem 'figaro'
-gem 'fog'
+# gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
