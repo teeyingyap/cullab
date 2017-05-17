@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'clearance'
-gem 'figaro'
+
 # gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
