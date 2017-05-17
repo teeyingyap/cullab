@@ -40,6 +40,8 @@ gem 'clearance'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+gem 'rails_admin'
+
 
 
 group :development, :test do
