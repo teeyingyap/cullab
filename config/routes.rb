@@ -6,6 +6,9 @@ namespace :api do
       resources :sessions, only: [:create]
       resource :session, only: [:destroy]
       resources :users, only: [:create]
+      resources :categories, only: [:index]
+      resources :user_categories, only: [:create]
+      resources :events, only: [:index]
     end
 end
 
