@@ -4,4 +4,11 @@ class Event < ApplicationRecord
   has_many :event_users, dependent: :destroy
   belongs_to :host, class_name: 'User', foreign_key: 'user_id'
 
+  after_create_commit :push_message
+
+  private
+  def push_message
+  	ActionCable.server.broadcast 'activity_channel', name: name, description: description
+  end
+
 end
