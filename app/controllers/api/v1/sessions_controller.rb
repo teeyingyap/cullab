@@ -11,7 +11,7 @@ class Api::V1::SessionsController < ApplicationController
   sign_in(@user) do |status|
    if status.success?  && @user != nil  
     #render :json => {:result => true,:object => @user}
-    render json: {remember_token: @user.remember_token}
+    render json: {remember_token: @user.remember_token, id: @user.id}
    else
        render :json => { :result => false, :message => 'Invalid Email or Password'}
     end
@@ -29,4 +29,7 @@ class Api::V1::SessionsController < ApplicationController
 end
 
 
+# User.where({ name: ["Alice", "Bob"]})
+# Event.where(id: EventUser.where(guest: User.last).first.event_id)
 
+# Event.where(id: EventUser.where(user_id: 2))

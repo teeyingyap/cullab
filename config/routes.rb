@@ -8,8 +8,10 @@ namespace :api do
       resources :users, only: [:create]
       resources :categories, only: [:index]
       resources :user_categories, only: [:create]
-      resources :events, only: [:index]
+      resources :events, only: [:create, :index, :show]
+      resources :event_users, only: [:create, :index]
     end
 end
 
+root 'page#index' 
 end

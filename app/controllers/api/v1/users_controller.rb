@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApplicationController
+class Api::V1::UsersController <  ApplicationController
  skip_before_action :require_login, only: [:create, :new, :destroy], raise: false
  skip_before_action :authorize, only: [:create, :new, :destroy], raise: false
   
