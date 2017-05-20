@@ -59,7 +59,7 @@ ActiveRecord::Base.transaction do
 
 	    event['venue'] = Faker::Address.street_name
 	    event['description'] = 'TESTESTSETSETSETESTSETSETSTETESTSETESTSETSETSETESTESTESESTSETSETESTES'
-	    event['event_time'] = Faker::Date.between(100.days.ago, Date.today)
+	    event['event_time'] = Faker::Time.between(Date.today, 50.days.after)
 	    event['user_id'] = uids.sample
 	  	event['category_id'] = cid
 	    Event.create(event)

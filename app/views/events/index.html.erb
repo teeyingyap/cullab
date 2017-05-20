@@ -1,9 +1,15 @@
-Event List
+<h1>Event List </h1>
 
-<% @events.each do |event|  %>
-
-	<div class='event'>
-		<p><%= event.name %></p>
-		<p><%= event.description %></p>
-	</div>
+<% if !@events.nil? %>
+	<% @events.each do |event|  %>
+		<div class='event'>
+			------------------<br>
+			[EVENT TIME] <%= event.event_time %><br>
+			[EVENT NAME] <%= event.name %><br>
+			[EVENT VENUE] <%= event.venue %><br>
+			[DESCRIPTION] <%= event.description %><br>
+			[HOST NAME] <%= event.host.fullname %><br>
+			[NUBBER OF GUESTS] <%= event.category.name %><br>
+		</div>
+	<% end %>
 <% end %>
