@@ -9,7 +9,8 @@
 			[EVENT VENUE] <%= event.venue %><br>
 			[DESCRIPTION] <%= event.description %><br>
 			[HOST NAME] <%= event.host.fullname %><br>
-			[NUBBER OF GUESTS] <%= event.category.name %><br>
+			[NUBBER OF GUESTS] <%= event.guests.count %><br>
+			[Category] <%= event.category.name %><br>
 		</div>
 	<% end %>
 <% end %>
