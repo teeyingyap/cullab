@@ -7,6 +7,6 @@ App.activity = App.cable.subscriptions.create "ActivityChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    console.log(data['name'])
-    $('.event:first').before "	<div class='event'><p>#{data['name']}</p><p>#{data['description']}</p></div>"
-
+    # for debugging
+    #console.log(data.last_updated_time + " " + data.last_updated_event_name)
+    location.reload();
