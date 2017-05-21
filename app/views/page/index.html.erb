@@ -1,7 +1,11 @@
 <h1>Hi</h1>
+
+
 <img id="myimg">
 <script type="text/javascript">
   // Create a reference to the file we want to download
+$(document).ready(function() {
+    $('#myimg').append('<img src="ajax-loader.gif" class="loader"/> ');
 
 var storageRef = firebase.storage().ref("images/cat_news.jpg");
 storageRef.getDownloadURL().then(function(url) {
@@ -31,7 +35,7 @@ storageRef.getDownloadURL().then(function(url) {
       break;
   }
   });
-
+});
 
 
 </script>
