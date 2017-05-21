@@ -1,7 +1,282 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+                                          // --> background
 
-#event {
-	background-color: blue; 
+body {
+	background: url(http://wallpapercave.com/wp/f2nbsPJ.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+                                        // --> Weather Styling
+
+@font-face {
+  font-family: 'weather';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'),
+  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'),
+  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// .container-fluid {
+//   position: -webkit-sticky;  // required for Safari
+//   position: sticky;
+//   top: 0; // required as well
+//   position: fixed;
+//   z-index: 1;
+//
+// }
+//
+//
+// .container {
+//   position: absolute;
+//
+//
+// }
+
+#weather {
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+i {
+  color: #fff;
+  font-family: weather;
+  font-size: 100px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+}
+
+.icon-0:before { content: ":"; }
+.icon-1:before { content: "p"; }
+.icon-2:before { content: "S"; }
+.icon-3:before { content: "Q"; }
+.icon-4:before { content: "S"; }
+.icon-5:before { content: "W"; }
+.icon-6:before { content: "W"; }
+.icon-7:before { content: "W"; }
+.icon-8:before { content: "W"; }
+.icon-9:before { content: "I"; }
+.icon-10:before { content: "W"; }
+.icon-11:before { content: "I"; }
+.icon-12:before { content: "I"; }
+.icon-13:before { content: "I"; }
+.icon-14:before { content: "I"; }
+.icon-15:before { content: "W"; }
+.icon-16:before { content: "I"; }
+.icon-17:before { content: "W"; }
+.icon-18:before { content: "U"; }
+.icon-19:before { content: "Z"; }
+.icon-20:before { content: "Z"; }
+.icon-21:before { content: "Z"; }
+.icon-22:before { content: "Z"; }
+.icon-23:before { content: "Z"; }
+.icon-24:before { content: "E"; }
+.icon-25:before { content: "E"; }
+.icon-26:before { content: "3"; }
+.icon-27:before { content: "a"; }
+.icon-28:before { content: "A"; }
+.icon-29:before { content: "a"; }
+.icon-30:before { content: "A"; }
+.icon-31:before { content: "6"; }
+.icon-32:before { content: "1"; }
+.icon-33:before { content: "6"; }
+.icon-34:before { content: "1"; }
+.icon-35:before { content: "W"; }
+.icon-36:before { content: "1"; }
+.icon-37:before { content: "S"; }
+.icon-38:before { content: "S"; }
+.icon-39:before { content: "S"; }
+.icon-40:before { content: "M"; }
+.icon-41:before { content: "W"; }
+.icon-42:before { content: "I"; }
+.icon-43:before { content: "W"; }
+.icon-44:before { content: "a"; }
+.icon-45:before { content: "S"; }
+.icon-46:before { content: "U"; }
+.icon-47:before { content: "S"; }
+
+#weather h2 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 80px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+#weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+#weather li {
+  background: #fd746c;
+  background: -webkit-linear-gradient(to top, #ff9068, #fd746c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #ff9068, #fd746c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 5px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#weather .currently {
+  margin: 0 20px;
+}
+
+                                                  // --> Date & Time
+
+#datetime {
+  height: 150px;
+  border-radius: 8px;
+}
+
+#datetime p{
+  font-family: 'Carrois Gothic SC', sans-serif;
+  color: rgba(255, 255, 255, 255);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: left;
+  position: relative;
+  top: 20px;
+}
+                                          // ---> Greeting
+
+#greeting {
+  height: 150px;
+  margin-left: auto;
+  border-radius: 8px;
+  overflow: hidden;
+
+}
+
+#greeting p{
+
+  font-family: 'Tangerine', cursive;
+  color: rgba(255, 255, 255, 255);
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  top: 20px;
+
+}
+
+// --> Event Cards
+
+#event-card {
+	// width: 600px;
+	height: 450px;
+	// position: relative;
+  // margin: auto;
+  // padding: 20%;
+  margin-top: 30px;
+  // //  margin-bottom: 100px;
+  //  margin-right: 40px;
+   margin-left: 70px;
+  // margin: inherit;
+  // margin: 10px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2), 0px 2px 6px rgba(0, 0, 0, 0.4);
+	// overflow: inherit;
+
+}
+
+
+#cat {
+
+  position: absolute;
+  top: 22px;
+  left: -33px;
+  height: 33px;
+  padding: 0 30px 0 63px;
+  line-height: 33px;
+  vertical-align: middle;
+  font-family: sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: 0 1px 2px #000;
+  background: rgba(136, 86, 168, .6);
+
+}
+
+#event-img {
+    width: 100%;
+    height: 10px;
+}
+
+.img-responsive{
+  width: 100%;
+  max-height: 210px;
+  border-radius: 8px;
+  margin-top: 8px;
+
+}
+
+.img-circle{
+  margin-top: 5px;
+  max-width: 100px;
+  max-height: 80px;
+  margin-left: 20px;
+
+}
+
+#host-img {
+
+}
+
+#host-info{
+  height: 100px;
+  // border-radius: 8px;
+  width:72%;
+  margin-top: 5px;
+  background: #FFCC00;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 255);
+  font-size: 20px;
+}
+
+
+
+#event-icon {
+  background-color: #9967B9 ;
+  height: 110px;
+
+}
+
+.icon{
+  position: relative;
+  top: 15px;
+  margin-left: 25px;
+}
+
+.icon p {
+  font-family:  sans-serif;
+  color: rgba(255, 255, 255, 255);
+  font-size: 13px;
+  // font-weight: 700;
+  margin-top: 10px;
+  text-align: center;
+}
+
+ul,li{
+  list-style:none;
+}
+
+#event-info{
+  height: 110px;
+  // border-radius: 8px;
+  width:72%;
+  background: #0072ff;
+
+  color: rgba(0,114,255,0.1);
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 255);
+  font-size: 20px;
+  // font-weight : 700;
+
+  // position: relative;
 }
