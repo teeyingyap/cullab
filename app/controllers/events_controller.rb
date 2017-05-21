@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 	def index
     	@events = Event.recent
+    	@h = Time.now.hour
   	end
 
   	# only for development environment

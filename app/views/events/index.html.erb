@@ -1,16 +1,58 @@
-<h1>Event List </h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 col-lg-4" id="datetime">
+      <p><%= @time %></p>
+    </div>
+    <div class="col-md-5 col-lg-4" id="greeting">
+      <% if @h > 03 && @h < 12 %>
+          <p>Good Morning</p>
+      <% elsif  @h > 12 && @h < 18 %>
+          <p>Good Afternoon</p>
+      <% else %>
+          <p>Good Evening</p>
+      <% end %>
+    </div>
+    <div class="col-md-4 col-lg-4">
+      <div id="weather"></div>
+    </div>
+  </div>
+</div>
 
-<% if !@events.nil? %>
-	<% @events.each do |event|  %>
-		<div class='event'>
-			------------------<br>
-			[EVENT TIME] <%= event.event_time %><br>
-			[EVENT NAME] <%= event.name %><br>
-			[EVENT VENUE] <%= event.venue %><br>
-			[DESCRIPTION] <%= event.description %><br>
-			[HOST NAME] <%= event.host.fullname %><br>
-			[NUBBER OF GUESTS] <%= event.guests.count %><br>
-			[Category] <%= event.category.name %><br>
-		</div>
-	<% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+    <div class="col-md-5 col-lg-5" id="event-card">
+        <div class="col-md-5 col-lg-5" id="event-img">
+          <label id="cat"><p> <%= event.category.name %> </p></label>
+          <img src="http://wallpapers4screen.com/Uploads/29-1-2016/22412/thumb2-grain-coffee-macaroon-cakes-macaroni-sweets.jpg" class="img-responsive">
+          <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3" id="host-img">
+              <img src="https://s-media-cache-ak0.pinimg.com/736x/8f/b0/77/8fb077e97b62cfab2a4dec108ac7112f.jpg" class="img-circle">
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-3" id="host-info">
+                <p> <%= event.host.fullname %> has created a <%= event.name %> event</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3" id="event-icon">
+              <span class="icon">
+                <%= image_tag("list.svg", size: "50x50") %>
+                <p> DETAILS <%= event.description %></p>
+              </span>
+            </div>
+            <div class="col-md-9" id="event-info">
+              <ul>
+                <li>
+                      <p>VENUE : <%= event.venue %> </p>
+                      <p>WHEN : <%= event.event_time.to_formatted_s(:long_ordinal)%></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <% end %>
+  </div>
+</div>
+Add Comment
