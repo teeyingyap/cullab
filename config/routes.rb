@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin_user', as: 'rails_admin'
   mount ActionCable.server => '/cable'
   resources :events, only: [:index] 
+
+  resources :subcategories
+  
   get "/events/push"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 namespace :api do
@@ -13,6 +16,7 @@ namespace :api do
       resources :user_categories, only: [:create]
       resources :events, only: [:create, :index, :show]
       resources :event_users, only: [:create, :index]
+      # resources :subcategories, only: [:index]
     end
 end
 

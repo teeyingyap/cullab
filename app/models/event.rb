@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
 
   belongs_to :category
-
+  belongs_to :subcategory
   #has_many :event_users, foreign_key: :user_id, class_name: "EventUser", dependent: :destroy
  
 
