@@ -26,13 +26,13 @@
       <div class="row">
         <div class="col-sm-5 col-md-5 col-lg-5" id="event-img">
           <label id="cat"><p> <%= event.category.name %> </p></label>
-          <% if event.category.name == "foods" %>
+          <% if event.created_at > Date.today - 3 %>
           <label id="latest"><p> NEW EVENT!!!!!! </p></label>
           <% end %>
-          <img src="http://wallpapers4screen.com/Uploads/29-1-2016/22412/thumb2-grain-coffee-macaroon-cakes-macaroni-sweets.jpg" class="img-responsive">
+          <img src="<%= event.subcategory.photo.thumb.url %>" class="img-responsive">
           <div class="row">
             <div class="col-sm-3 col-md-3" id="host-img">
-              <img src="https://s-media-cache-ak0.pinimg.com/736x/8f/b0/77/8fb077e97b62cfab2a4dec108ac7112f.jpg" class="img-circle">
+              <img src="<%= event.host.avatar %>" class="img-circle">
             </div>
             <div class="col-sm-8 col-md-8" id="host-info">
               <p> <%= event.host.fullname %> has created a <%= event.name %> event</p>
