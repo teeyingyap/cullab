@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'date'
 
-EventUser.delete_all
-Category.delete_all
-Event.delete_all
-User.delete_all
-UserCategory.delete_all
+# EventUser.delete_all
+# Category.delete_all
+# Event.delete_all
+# User.delete_all
+# UserCategory.delete_all
 
 category = {}
 ActiveRecord::Base.transaction do
@@ -37,8 +37,8 @@ end
 
 
 user = {}
-10.times do 
-    user['fullname'] = Faker::Name.name 
+10.times do
+    user['fullname'] = Faker::Name.name
     user['email'] = Faker::Internet.email
     user['password'] = 'test'
     User.create(user)
@@ -51,7 +51,7 @@ Category.all.each { |c| cids << c.id }
 
 event = {}
 ActiveRecord::Base.transaction do
-	20.times do 
+	20.times do
 		cid = cids.sample
 	    event['name'] = Faker::Food.ingredient
 	    event['name'] = Faker::Vehicle.manufacture if cid ==2
@@ -71,7 +71,7 @@ Event.all.each { |e| eids << e.id }
 
 user_category = {}
 ActiveRecord::Base.transaction do
-	20.times do 
+	20.times do
 	    user_category['user_id'] = uids.sample
 	  	user_category['category_id'] = cids.sample
 	    UserCategory.create(user_category)
@@ -80,7 +80,7 @@ end
 
 event_user = {}
 ActiveRecord::Base.transaction do
-	20.times do 
+	20.times do
 	    event_user['user_id'] = uids.sample
 	  	event_user['event_id'] = eids.sample
 	    EventUser.create(event_user)
