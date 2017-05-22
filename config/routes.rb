@@ -11,7 +11,7 @@ namespace :api do
     namespace :v1 do
       resources :sessions, only: [:create]
       resource :session, only: [:destroy]
-      resources :users, only: [:create]
+      resources :users, only: [:index, :update]
       resources :categories, only: [:index]
       resources :user_categories, only: [:create]
       resources :events, only: [:create, :index, :show]

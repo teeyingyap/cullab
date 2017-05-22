@@ -1,32 +1,39 @@
-class Api::V1::UsersController <  ApplicationController
- skip_before_action :require_login, only: [:create, :new, :destroy], raise: false
- skip_before_action :authorize, only: [:create, :new, :destroy], raise: false
+class Api::V1::UsersController <  Api::V1::ApplicationController
+
+  def index 
+    @user = User.where(id: current_user.id).all
+    render :json => @user.to_json
+  end 
+
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_from_params)
+  end
+    #   event_json = JSON.parse(request.body.read)
+    # @hosted_event = Event.new(event_json)
+    # @hosted_event.save
+#  def create
+#     @user = User.new(user_from_params)
+#     if @user.save 
+#   	  sign_in @user
+#       render json: {remember_token: @user.remember_token}
+#     else
+#        render :json => { :result => false, :message => 'Invalid Email or Password'}
+#     end
   
- skip_before_action :verify_authenticity_token  
-
-
-
- def create
-    @user = User.new(user_from_params)
-    if @user.save 
-  	  sign_in @user
-      render json: {remember_token: @user.remember_token}
-    else
-       render :json => { :result => false, :message => 'Invalid Email or Password'}
-    end
-  
- end
+#  end
 
   
- def destroy
-  sign_out 
-  render :json => { :result => true, :message => 'Successfully logged out'}
- end
+#  def destroy
+#   sign_out 
+#   render :json => { :result => true, :message => 'Successfully logged out'}
+#  end
 
 
 private 
   def user_from_params
-  	params.require(:user).permit(:fullname, :email, :password)
+  	params.require(:user).permit(:avatar)
   end 
 
 

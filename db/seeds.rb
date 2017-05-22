@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'date'
 
-EventUser.delete_all
-Category.delete_all
-Event.delete_all
-User.delete_all
-UserCategory.delete_all
+# EventUser.delete_all
+# Category.delete_all
+# Event.delete_all
+# User.delete_all
+# UserCategory.delete_all
 
 category = {}
 ActiveRecord::Base.transaction do
