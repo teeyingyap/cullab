@@ -13,11 +13,11 @@
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase-storage.js"></script>
 
-    <link href=“https://fonts.googleapis.com/css?family=Baloo+Da|Handlee|Carrois+Gothic+SC|Tangerine:700|Montserrat” rel=“stylesheet”>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Handlee|Carrois+Gothic+SC|Tangerine:700|Montserrat|Titillium+Web|Roboto|Arimo" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.4/jquery.pagepiling.js"></script> -->
    <script>
   // Initialize Firebase
   var config = {
@@ -34,20 +34,6 @@
   </head>
 
   <body>
-
-
-    <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
-
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-    </div>
 
     <%= yield %>
   </body>

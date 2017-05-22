@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 	def index
     	@events = Event.recent
     	@h = Time.now.hour
+			@time = Time.now.strftime("%A, %d %B %Y %I:%M %p")
   	end
 
   	# only for development environment
