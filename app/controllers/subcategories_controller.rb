@@ -16,6 +16,19 @@ class SubcategoriesController < ApplicationController
      end
   end
 
+  def edit
+    @subcategory = Subcategory.find(params[:id])
+  end
+
+  def update
+    @subcategory = Subcategory.find(params[:id])
+    @subcategory.update(sub_from_params)
+    redirect_to @subcategory
+  end 
+
+  def show
+    @subcategory = Subcategory.find(params[:id])
+  end
 
   def sub_from_params
     params.require(:subcategory).permit(:name, :photo, :category_id)
