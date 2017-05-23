@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-md-3 col-lg-4" id="datetime">
       <p><%= @time %></p>
+
+
+
     </div>
     <div class="col-md-4 col-lg-4" id="greeting">
       <% if @h > 03 && @h < 12 %>
@@ -22,9 +25,9 @@
 <div class="container-fluid" id="content" >
 <% @events.each do |event| %>
 
-    <div class="col-sm-5 col-md-5 col-lg-5" id="event-card">
+    <div class="col-xs-8 col-sm-5 col-md-5 col-lg-5" id="event-card">
       <div class="row">
-        <div class="col-sm-5 col-md-5 col-lg-5" id="event-img">
+        <div class="col-xs-8 col-sm-5 col-md-5 col-lg-5" id="event-img">
           <label id="cat"><p> <%= event.category.name %> </p></label>
           <% if event.created_at > Date.today - 3 %>
           <label id="latest"><p> NEW EVENT!!!!!! </p></label>
@@ -54,3 +57,16 @@
 <% end %>
 
 </div>
+
+
+<article class="clock">
+  <div class="hours-container">
+    <div class="hours"></div>
+  </div>
+  <div class="minutes-container">
+    <div class="minutes"></div>
+  </div>
+  <div class="seconds-container">
+    <div class="seconds"></div>
+  </div>
+</article>
