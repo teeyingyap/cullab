@@ -1,19 +1,20 @@
 <div class="container-fluid" id="info">
   <div class="row">
     <div class="col-md-3 col-lg-4" id="datetime">
-      <p><%= @time %></p>
-
+       <!-- <p><%= @time %></p> -->
+ <p><i class="fa fa-cubes fa-lg" aria-hidden="true"></i> Cullab</p> 
 
 
     </div>
     <div class="col-md-4 col-lg-4" id="greeting">
-      <% if @h > 03 && @h < 12 %>
+    <div class="clock"></div>
+<!--   <% if @h > 03 && @h < 12 %>
           <p>Good Morning</p>
       <% elsif  @h >= 12 && @h < 18 %>
           <p>Good Afternoon</p>
       <% else %>
           <p>Good Evening</p>
-      <% end %>
+      <% end %> -->
     </div>
     <div class="col-md-5 col-lg-4">
       <div id="weather"></div>
@@ -22,23 +23,41 @@
 </div>
 
 
+
+
 <div class="container-fluid" id="content" >
 <% @events.each do |event| %>
 
     <div class="col-xs-8 col-sm-5 col-md-5 col-lg-5" id="event-card">
       <div class="row">
         <div class="col-xs-8 col-sm-5 col-md-5 col-lg-5" id="event-img">
-          <label id="cat"><p> <%= event.category.name %> </p></label>
-          <% if event.created_at > Date.today - 3 %>
-          <label id="latest"><p> NEW EVENT!!!!!! </p></label>
+         <% if event.category.name == "Food" %> 
+            <label id="cat"><p><i class="fa fa-cutlery" aria-hidden="true"></i> <%= event.category.name %></p></label> 
+        <% elsif event.category.name == "Sports" %>
+           <label id="cat"><p><i class="fa fa-bicycle" aria-hidden="true"></i> <%= event.category.name %></p></label>
+        <% elsif event.category.name == "Entertainment" %>
+           <label id="cat"><p><i class="fa fa-television" aria-hidden="true"></i> <%= event.category.name %></p></label>
+        <% elsif event.category.name == "Work" %>
+            <label id="cat"><p><i class="fa fa-briefcase" aria-hidden="true"></i> <%= event.category.name %></p></label>
+        <% elsif event.category.name == "Charity" %>
+             <label id="cat"><p><i class="fa fa-user-o" aria-hidden="true"></i> <%= event.category.name %></p></label>
+         <% elsif event.category.name == "Travel" %>
+        <label id="cat"><p><i class="fa fa-car" aria-hidden="true"></i> <%= event.category.name %></p></label>
+
+         <!--  <label id="cat"><p> <%= event.category.name %> </p></label> -->
+<!--           <% if event.created_at > Date.today - 3 %>
+          <label id="latest"><p>NEW EVENT! </p></label>
+          <% end %> -->
           <% end %>
           <img src="<%= event.subcategory.photo.thumb.url %>" class="img-responsive">
           <div class="row">
             <div class="col-sm-3 col-md-3" id="host-img">
               <img src="<%= event.host.avatar %>" class="img-circle">
+              <p><%= event.host.fullname %></p>
             </div>
             <div class="col-sm-8 col-md-8" id="host-info">
-              <p> <%= event.host.fullname %> has created a <%= event.name %> event</p>
+              <!-- <p> <%= event.host.fullname %> has created a <%= event.name %> event</p> -->
+              <p> <%= event.name %></p>
             </div>
           </div>
           <div class="row">
@@ -48,7 +67,8 @@
             </div>
             <div class="col-sm-8 col-md-8" id="event-info">
                 <p id="event-venue"> <%= event.venue %> </p>
-                <p id="event-description"> <%= event.description%></p>
+                <!-- <p id="event-description"> <%= event.description%></p> -->
+                <p id="event-description"> Time: <%= event.event_time.strftime("%I:%M %p")%></p>
             </div>
           </div>
         </div>

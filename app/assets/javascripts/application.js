@@ -13,4 +13,5 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require flipclock
 //= require_tree .

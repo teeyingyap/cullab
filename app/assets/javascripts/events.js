@@ -1,6 +1,11 @@
 $(document).ready(function() {
   loadWeather('',''); //@params location, woeid
+    var j = jQuery.noConflict();  
+    var clock = $('.clock').FlipClock({         
+      clockFace: 'TwelveHourClock'    
+     });
 });
+
 
 function loadWeather(location, woeid) {
   $.simpleWeather({

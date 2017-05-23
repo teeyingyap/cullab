@@ -9,6 +9,7 @@ class Api::V1::UsersController <  Api::V1::ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes(user_from_params)
+    render json: {remember_token: @user.remember_token}
   end
 
 #  def create
