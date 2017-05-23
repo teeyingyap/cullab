@@ -21,14 +21,14 @@ function loadWeather(location, woeid) {
   });
 }
 
-setInterval(function(){
-
-    //time to scroll to bottom
-    $("html, body").animate({ scrollTop: $(document).height() }, 80000);
-
-    //scroll to top
-    setTimeout(function() {
-       $('html, body').animate({scrollTop:0}, 40000);
-    },200);//call every 2000 miliseconds
-
-},2000);//call every 2000 miliseconds
+// setInterval(function(){
+//
+//     //time to scroll to bottom
+//     $("html, body").animate({ scrollTop: $(document).height() }, 80000);
+//
+//     //scroll to top
+//     setTimeout(function() {
+//        $('html, body').animate({scrollTop:0}, 40000);
+//     },200);//call every 2000 miliseconds
+//
+// },2000);//call every 2000 miliseconds
