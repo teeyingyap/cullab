@@ -10,9 +10,7 @@ class Api::V1::UsersController <  Api::V1::ApplicationController
     @user = User.find(params[:id])
     @user.update_attributes(user_from_params)
   end
-    #   event_json = JSON.parse(request.body.read)
-    # @hosted_event = Event.new(event_json)
-    # @hosted_event.save
+
 #  def create
 #     @user = User.new(user_from_params)
 #     if @user.save 
