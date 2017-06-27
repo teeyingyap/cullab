@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:6f2a9cdaa5768fe7f5a4b652a3ae7217@angelfish.redistogo.com:9429/
   channel_prefix: tomo2_production
